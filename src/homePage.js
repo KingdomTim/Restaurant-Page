@@ -1,38 +1,28 @@
+import Background from './background.jpg'
+
 function homePage() {
 
     const home = document.createElement('div')
-    home.classList.add = ('.home')
-        const header = document.createElement('div')
-            const homeButton = document.createElement('div')
-            const menuButton = document.createElement('div')
-            const contactButton = document.createElement('div')
-            homeButton.classList.add('.home')
-            menuButton.classList.add('.menu')
-            contactButton.classList.add('.contact')
-            header.appendChild(homeButton)
-            header.appendChild(menuButton)
-            header.appendChild(contactButton)
-            homeButton.textContent = 'Home'
-            menuButton.textContent = 'Menu'
-            contactButton.textContent = 'Contact'
-        const main = document.createElement('div')
-            const name = document.createElement('h1')
+    home.classList.add('home')
+        const homeMain = document.createElement('div')
+        homeMain.classList.add('homeMain')
+            const myBackground = new Image() 
+            myBackground.src = Background
+            myBackground.classList.add('background')
             const text = document.createElement('div')
-            name.classList.add('.name')
-            text.classList.add('.text')
-            main.appendChild(name)
-            main.appendChild(text)
-            name.textContent = `Billy Bob's Finger Lickin' Sandwiches`
-            text.textContent = `At Billy Bob's we ensure everyone is happy`
-        const footer = document.createElement('div')
-            const credits = document.createElement('div')
-            credits.classList.add('.credits')
-            footer.appendChild(credits)
-            credits.textContent = 'KingdomTim'
+            text.classList.add('text')
+            const title = document.createElement('h1')
+            const description = document.createElement('div')
+            title.classList.add('title')
+            description.classList.add('description')
+            homeMain.appendChild(myBackground)
+            homeMain.appendChild(text)
+            text.appendChild(title)
+            text.appendChild(description)
+            title.textContent = `Billy Bob's Finger Lickin' Burgers`
+            description.textContent = `At Billy Bob's, we ensure everyone is happy!`
 
-    home.appendChild(header)
-    home.appendChild(main)
-    home.appendChild(footer)
+    home.appendChild(homeMain)
 
     return home
 }
