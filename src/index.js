@@ -1,6 +1,7 @@
 import homePage from './homePage'
 import menuPage from './menuPage'
 import contactPage from './contactPage'
+import Github from './githubreal.png'
 import './styles.css'
 
 
@@ -14,8 +15,8 @@ function content() {
             homeButton.classList.add('homeButton')
             menuButton.classList.add('menuButton')
             contactButton.classList.add('contactButton')
-            header.appendChild(homeButton)
             header.appendChild(menuButton)
+            header.appendChild(homeButton)
             header.appendChild(contactButton)
             homeButton.textContent = 'Home'
             menuButton.textContent = 'Menu'
@@ -25,7 +26,12 @@ function content() {
             const credits = document.createElement('div')
             credits.classList.add('credits')
             footer.appendChild(credits)
-            credits.textContent = 'KingdomTim'
+            const myGithub = new Image()
+            myGithub.src = Github
+            myGithub.classList.add('github')
+            credits.textContent = 'Copyright © 2023 Made by KingdomTim'
+            footer.appendChild(credits)
+            footer.appendChild(myGithub)
 
     const content = document.querySelector('#content')
     content.appendChild(header)
@@ -33,16 +39,25 @@ function content() {
     content.appendChild(footer)
 
     homeButton.addEventListener('click', () => {
+        homeButton.style.textDecoration = 'underline'
+        menuButton.style.textDecoration = 'none'
+        contactButton.style.textDecoration = 'none'
         content.removeChild(content.firstElementChild.nextElementSibling)
         content.insertBefore(homePage(), content.children[1])
             }
         )
     
     menuButton.addEventListener('click', () => {
+        menuButton.style.textDecoration = 'underline'
+        homeButton.style.textDecoration = 'none'
+        contactButton.style.textDecoration = 'none'
         content.removeChild(content.firstElementChild.nextElementSibling)
-        content.insertBefore(menuPage(),content.children[1])
+        content.insertBefore(menuPage(), content.children[1])
     })
     contactButton.addEventListener('click', () => {
+        contactButton.style.textDecoration = 'underline'
+        homeButton.style.textDecoration = 'none'
+        homeButton.style.textDecoration = 'none'
         content.removeChild(content.firstElementChild.nextElementSibling)
         content.insertBefore(contactPage(), content.children[1])
     })
