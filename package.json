@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/KingdomTim/Restaurant-Page/issues"
   },
-  "homepage": "https://github.com/KingdomTim/Restaurant-Page#readme",
+  "homepage": "https://github.com/KingdomTim/Restaurant-Page",
   "devDependencies": {
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
